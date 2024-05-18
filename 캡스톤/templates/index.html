@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>사진 업로드</title>
+</head>
+<body>
+    <h1>사진 업로드</h1>
+
+    <!-- 파일 업로드 폼 -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <!-- 파일 선택 입력 필드 -->
+        <input type="file" name="file" required>
+        <br><br>
+        <!-- 업로드 버튼 -->
+        <input type="submit" value="업로드">
+    </form>
+</body>
+</html>

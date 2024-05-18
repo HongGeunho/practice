@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>업로드 성공</title>
+</head>
+<body>
+    <h1>업로드 성공</h1>
+    <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image">
+    <p>{{ filename }} 파일이 성공적으로 업로드되었습니다.</p>
+
+    <form action="{{ url_for('like_image', image_id=image.id) }}" method="post">
+        <button type="submit">좋아요 ({{ image.likes }})</button>
+    </form>
+
+    <form action="{{ url_for('add_comment', image_id=image.id) }}" method="post">
+        <textarea name="comment" placeholder="댓글을 입력하세요"></textarea>
+        <button type="submit">댓글 달기</button>
+    </form>
+
+    <h2>댓글</h2>
+    {% for comment in image.comments %}
+    <p>{{ comment.content }}</p>
+    {% endfor %}
+
+    <a href="/">홈으로 돌아가기</a>
+</body>
+</html>

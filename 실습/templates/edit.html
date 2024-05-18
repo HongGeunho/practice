@@ -1,0 +1,18 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>노래 수정</title>
+</head>
+<body>
+    <h1>노래 수정</h1>
+    <form method="post">
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title" value="{{ song.title }}" required><br>
+        <label for="artist">아티스트:</label>
+        <input type="text" id="artist" name="artist" value="{{ song.artist }}" required><br>
+        <label for="album">앨범:</label>
+        <input type="text" id="album" name="album" value="{{ song.album }}"><br>
+        <button type="submit">수정</button>
+    </form>
+</body>
+</html>
